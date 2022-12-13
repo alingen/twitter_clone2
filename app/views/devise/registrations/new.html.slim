@@ -1,0 +1,23 @@
+header
+  .header-top
+    h1 Welcome to Happiness Chain !
+
+.main
+  .main-format
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .box-input
+        = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "name"
+
+      .box-input
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'email'
+
+      .box-input
+        = f.password_field :password, autocomplete: "new-password", placeholder: 'password'
+
+      .box-login-signup
+        = f.submit "サインアップ"
+      br
+      p ログインはこちらから
+      .box-login-signup
+        = render "devise/shared/links"

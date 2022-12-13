@@ -1,0 +1,33 @@
+body
+header
+  .header-top
+    h1 Happiness Chain
+  .nav-menu
+    li 検索
+    - if current_user
+      = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"
+
+.main
+  .main-format
+    - 10.times
+      .tweet-index-item
+        .post-left
+          = image_tag "user_images/twittericon13.jpeg" 
+        .post-right 
+          .post-user-name IKE
+          | あああああああああああああああああああ
+
+  -if current_user
+    .tweet-menu
+      .tweet-user-image 
+        = image_tag "user_images/twittericon13.jpeg" 
+      .tweet-user-name
+        = current_user.name 
+        | さん
+      .tweet-do 
+        p つぶやく
+
+  - else
+   .login-form
+      .login-button
+        = link_to 'ログイン', user_session_path
