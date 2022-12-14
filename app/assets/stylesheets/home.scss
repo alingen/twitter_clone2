@@ -1,0 +1,212 @@
+//reset-------------------------
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #2d3133;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+input {
+  background-color: transparent;
+  outline-width: 0;
+}
+
+form input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}
+
+// 共通レイアウト--------------------------
+
+.main {
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  background-color: #f5f8fa;
+}
+
+//top-----------------------
+
+body {
+  margin: 0;
+  min-height: 1vh;
+}
+
+header {
+  height: 150px;
+  width: 100%;
+  padding-top: 20px;
+  background-color: #f5f8fa;
+
+  .header-top {
+    background: rgba(77, 214, 90, 0.98);
+    width: 90%;
+    border: 10px solid #2FD768;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 200px;
+    margin: 0 auto;
+
+    h1 {
+      color: #fff;
+      text-align: center;
+    } 
+  } 
+
+  .nav-menu {
+    margin-top: 15px;
+    margin-right: 60px;
+    height: 40px;
+    padding: 5px;
+    float: right;
+    li {
+      float: left;
+      color: black;
+      margin-left: 10px;
+    }
+    a {
+      margin-left: 10px;
+      color: black;
+    }
+  }
+}
+
+// twee-timelineの部分----------------
+
+.main-format {
+  max-width: 600px;
+  margin: 30px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  clear: both;
+  background-color: #f5f8fa;
+}
+
+.tweet-index-item {
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #bfc7ce;
+}
+
+.post-left {
+  float: left;
+  width: 10%;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+    color: black;
+  }
+}
+
+.post-right {
+  float: left;
+  width: 90%;
+  padding-left: 25px;
+  text-align: left;
+}
+
+.post-user-name {
+  font-weight: 600;
+}
+
+
+// tweetできるところの部分----------
+
+.tweet-menu {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  height: 200px;
+  width: 300px; 
+  background-color: rgba(77, 214, 90, 0.98); 
+  border-radius: 10px;
+  float: right;
+  padding: 30px;
+  box-shadow: 0 2px 6px #bfc7ce;
+}
+
+.tweet-user-image {
+  float: left;
+  width: 20%;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+    color: black;
+  }
+}
+
+.tweet-user-name {
+  float: left;
+  width: 80%;
+  padding-top: 10px;
+  padding-left: 25px;
+  text-align: left;
+  color: #fff;
+  font-size: 20px;
+}
+
+.tweet-do {
+  position: relative;
+  margin-top: 80px;
+  padding: 20px;
+  background-color: #287100;
+  text-align: center;
+  border-radius: 10px;
+  p {
+    margin: 0px;
+    font-size: 20px;
+    color: #fff;
+  }
+}
+
+// ログアウトボタン
+
+.login-form {
+  position: fixed;
+  top: 750px;
+  height: 100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.login-button {
+  text-align: center;
+  height: 100px;
+  width: 250px; 
+  background-color: rgba(77, 214, 90, 0.98); 
+  border-radius: 80px;
+  padding: 30px;
+  box-shadow: 0 2px 6px #bfc7ce;
+  margin: 0 auto;
+  a {
+    font-size: 30px;
+    color: #fff; 
+  }
+}

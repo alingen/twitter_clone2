@@ -1,0 +1,20 @@
+header
+  .header-top
+    h1 Welcome to Happiness Chain !
+
+.main
+  .main-format
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .box-input
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'email'
+      .box-input
+        = f.password_field :password, autocomplete: "current-password", placeholder: 'password'
+
+      .box-login-signup
+        = f.submit "ログイン"
+      .box-login-github
+        = f.submit "GitHubでログイン"
+      br
+      p まだ会員登録してない方はこちらから新規登録
+      .box-login-signup
+        = render "devise/shared/links"
