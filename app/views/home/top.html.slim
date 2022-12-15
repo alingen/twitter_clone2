@@ -22,7 +22,7 @@ header
       .tweet-user-image 
         = image_tag "user_images/twittericon13.jpeg" 
       .tweet-user-name
-        = link_to current_user.name, "/users/#{current_user.id}" 
+        = link_to current_user.name, user_path(current_user) 
       .tweet-do 
         p つぶやく
 
