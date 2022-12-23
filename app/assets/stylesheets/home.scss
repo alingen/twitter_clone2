@@ -162,7 +162,7 @@ header {
   }
 }
 
-.tweet-user-name {
+.tweet-user-name a{
   float: left;
   width: 80%;
   padding-top: 10px;
@@ -170,6 +170,7 @@ header {
   text-align: left;
   color: #fff;
   font-size: 20px;
+  overflow: hidden; 
 }
 
 .tweet-do {
