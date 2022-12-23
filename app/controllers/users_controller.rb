@@ -7,10 +7,11 @@ class UsersController < ApplicationController
       flash[:notice] = "退会処理を実行いたしました"
       redirect_to root_path
     else
-      render user_path
+      render :show
     end
   end
 
   def show
+    @user = User.find(params[:id])
   end
 end
