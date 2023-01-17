@@ -5,12 +5,8 @@ header
   .nav-menu
     li
       = link_to 'TOPページ', root_path 
-    li
-
     - if user_signed_in?
       = link_to 'ログアウト', destroy_user_session_path, method: :delete
-      - if current_user.id == params[:id].to_i
-        = link_to "退会する", withdrawal_user_path, method: :patch, data: { confilm: "本当に退会しますか？" }
 
 .main 
   .main-format
