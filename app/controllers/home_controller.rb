@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def top
-    @tweets = Tweet.order(created_at: :desc)
+    @tweets = Tweet.order(id: :desc)
   end
 end
