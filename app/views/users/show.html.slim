@@ -1,0 +1,30 @@
+body
+header
+  .header-top
+    h1 Happiness Chain
+  .nav-menu
+    li
+      = link_to 'TOPページ', root_path 
+    - if user_signed_in?
+      = link_to 'ログアウト', destroy_user_session_path, method: :delete
+
+.main 
+  .main-format
+    .user-profile
+      .user-profile-image
+        = image_tag "user_images/twittericon13.jpeg"
+      .profile-edit
+        = link_to 'プロフィールを編集', edit_user_registration_path
+
+      h4
+        = @user.name
+      p
+        = @user.introduction
+
+    ul.user-tabs 
+      li 投稿
+      li いいね
+    -5.times
+      .tweet-index-item
+        .post-left
+          = image_tag "user_images/twittericon13.jpeg"
