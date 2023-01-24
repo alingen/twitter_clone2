@@ -9,13 +9,14 @@ header
 
 .main
   .main-format
-    - 10.times
+    - @tweets.each do |tweet| 
       .tweet-index-item
         .post-left
           = image_tag "user_images/twittericon13.jpeg" 
         .post-right 
-          .post-user-name IKE
-          | あああああああああああああああああああ
+          .post-user-name
+            = tweet.user.name
+          = link_to  tweet.text
 
   -if current_user
     .tweet-menu
@@ -24,7 +25,7 @@ header
       .tweet-user-name
         = link_to current_user.name, user_path(current_user) 
       .tweet-do 
-        p つぶやく
+        = link_to 'つぶやく', new_tweet_path
 
   - else
    .login-form

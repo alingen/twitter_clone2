@@ -8,4 +8,5 @@ Rails.application.routes.draw do
       patch :withdrawal
     end
   end
+  resources :tweets
 end
