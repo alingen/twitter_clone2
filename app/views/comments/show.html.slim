@@ -1,0 +1,36 @@
+body
+header
+  .header-top
+    h1 Happiness Chain
+  .nav-menu
+    li
+      = link_to 'TOPページ', root_path
+    li
+
+.main 
+  .main-format
+    .comment-user-profile
+      .user-profile-image
+        = image_tag "user_images/twittericon13.jpeg"
+      h4
+        = @tweet.user.name
+      p
+        = @tweet.text
+    p コメント
+
+    - @comments.each do |comment|
+      .tweet-index-item
+        .post-left
+          = image_tag "user_images/twittericon13.jpeg"
+        .post-right
+          .post-user-name
+            = comment.user.name
+          = comment.text
+  
+  .tweet-menu
+      .tweet-user-image 
+        = image_tag "user_images/twittericon13.jpeg"
+      .tweet-user-name
+        = link_to current_user.name, user_path(current_user)
+      .tweet-do 
+        = link_to 'コメント', comment_new_path

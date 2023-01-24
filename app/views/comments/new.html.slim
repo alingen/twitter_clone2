@@ -1,0 +1,11 @@
+header
+  .header-top
+    h1 新しいコメント
+
+.main 
+  .main-format 
+    = form_with url: comment_create_path do |f|
+      .tweet-form
+        .tweet-form-body
+          = f.text_area :text 
+          = f.submit '投稿'
