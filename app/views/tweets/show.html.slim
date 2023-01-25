@@ -33,4 +33,4 @@ header
       .tweet-user-name
         = link_to current_user.name, user_path(current_user)
       .tweet-do 
-        = link_to 'コメント', comment_new_path
+        = link_to 'コメント', new_tweet_comment_path(params[:id])

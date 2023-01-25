@@ -10,5 +10,10 @@ class TweetsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @tweet = Tweet.find(params[:id])
+    @comments = @tweet.comments
+  end
   
 end
