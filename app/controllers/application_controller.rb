@@ -5,6 +5,19 @@ class ApplicationController < ActionController::Base
     new_user_registration_path
   end
 
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
+
+  def render_404(e = nil)
+    logger.info "Rendering 404 with exception: #{e.message}" if e
+
+    if request.xhr?
+      render json: { error: '404 error' }, status: 404
+    else
+      format = params[:format] == :json ? :json : :html
+      render file: Rails.root.join('public/404.html'), status: 404, layout: false, content_type: 'text/html'
+    end
+  end
+
   protected
 
   def configure_permitted_parameters
