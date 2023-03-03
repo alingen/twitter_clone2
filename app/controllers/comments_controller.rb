@@ -1,16 +1,22 @@
 class CommentsController < ApplicationController
+  before_action :set_tweet, only: %i[new, create]
+
   def new
-    @tweet = Tweet.find(params[:tweet_id])
+    @comments = Comment.new
   end
 
   def create
-    if @tweet = Tweet.find(params[:tweet_id])
-      @comment = current_user.comments.build(tweet_id: params[:tweet_id], text: params[:text])
-    end
+    @comment = current_user.comments.build(tweet_id: @tweet.id, text: params[:text])
     if @comment.save
       redirect_to tweet_path(@tweet)
     else
       render :new
     end
+  end
+
+  private
+
+  def set_tweet
+    @tweet = Tweet.find(params[:tweet_id])
   end
 end
