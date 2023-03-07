@@ -18,7 +18,7 @@ header
         = @tweet.text
     p コメント
 
-    - @comments.each do |comment|
+    - @tweet.comments.each do |comment|
       .tweet-index-item
         .post-left
           = image_tag "user_images/twittericon13.jpeg"
