@@ -4,7 +4,7 @@ header
 
 .main 
   .main-format 
-    = form_with url: tweet_comments_path(id: @tweet), model: @comment do |f|
+    = form_with url: tweet_comments_path(tweet_id: @tweet.id), model: @comment do |f|
       .tweet-form
         .tweet-form-body
           = f.text_area :text 
