@@ -8,5 +8,7 @@ Rails.application.routes.draw do
       patch :withdrawal
     end
   end
-  resources :tweets
+  resources :tweets do
+    resources :comments, only: [:new, :create] 
+  end
 end
