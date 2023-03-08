@@ -12,7 +12,14 @@ header
   .main-format
     .user-profile
       .user-profile-image
-        = image_tag "user_images/twittericon13.jpeg"
+        = form_with url: user_path(id: @user.id), method: :patch, local: true do |f|
+          = f.label :image
+            = f.file_field :image, style:"display:none;", onchange: "submit(this.form)"
+            - if @user.image.attached?
+              = image_tag @user.image
+            - else
+              = image_tag "user_images/twittericon13.jpeg"
+
       .profile-edit
         = link_to 'プロフィールを編集', edit_user_registration_path
 
