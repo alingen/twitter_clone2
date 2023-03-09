@@ -17,8 +17,16 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.image = params[:image]
-    @user.save
-    redirect_to @user
+    if @user.update user_params
+      redirect_to @user
+    else
+      render :show
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:image)
   end
 end

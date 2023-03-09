@@ -12,7 +12,7 @@ header
   .main-format
     .user-profile
       .user-profile-image
-        = form_with url: user_path(id: @user.id), method: :patch, local: true do |f|
+        = form_with url: user_path(id: @user.id), model: @user, method: :patch, local: true do |f|
           = f.label :image
             = f.file_field :image, style:"display:none;", onchange: "submit(this.form)"
             - if @user.image.attached?
