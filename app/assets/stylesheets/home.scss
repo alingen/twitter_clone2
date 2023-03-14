@@ -4,12 +4,13 @@
 }
 
 html {
-  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+  font: 100%/1.5 "Avenir Next", "Hiragino Sans", sans-serif;
   line-height: 1.7;
   letter-spacing: 1px;
 }
 
-ul, li {
+ul,
+li {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -21,7 +22,13 @@ a {
   font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
@@ -62,7 +69,7 @@ header {
   .header-top {
     background: rgba(77, 214, 90, 0.98);
     width: 90%;
-    border: 10px solid #2FD768;
+    border: 10px solid #2fd768;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 200px;
     margin: 0 auto;
@@ -70,8 +77,8 @@ header {
     h1 {
       color: #fff;
       text-align: center;
-    } 
-  } 
+    }
+  }
 
   .nav-menu {
     margin-top: 15px;
@@ -133,7 +140,6 @@ header {
   font-weight: 600;
 }
 
-
 // tweetできるところの部分----------
 
 .tweet-menu {
@@ -141,8 +147,8 @@ header {
   top: 30px;
   right: 60px;
   height: 200px;
-  width: 300px; 
-  background-color: rgba(77, 214, 90, 0.98); 
+  width: 300px;
+  background-color: rgba(77, 214, 90, 0.98);
   border-radius: 10px;
   float: right;
   padding: 30px;
@@ -162,7 +168,7 @@ header {
   }
 }
 
-.tweet-user-name a{
+.tweet-user-name a {
   float: left;
   width: 80%;
   padding-top: 10px;
@@ -170,7 +176,7 @@ header {
   text-align: left;
   color: #fff;
   font-size: 20px;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .tweet-do {
@@ -200,14 +206,27 @@ header {
 .login-button {
   text-align: center;
   height: 100px;
-  width: 250px; 
-  background-color: rgba(77, 214, 90, 0.98); 
+  width: 250px;
+  background-color: rgba(77, 214, 90, 0.98);
   border-radius: 80px;
   padding: 30px;
   box-shadow: 0 2px 6px #bfc7ce;
   margin: 0 auto;
   a {
     font-size: 30px;
-    color: #fff; 
+    color: #fff;
   }
+}
+
+// いいね
+.like {
+  text-align: right;
+}
+
+.liked-btn {
+  color: #ff2581;
+}
+
+.unliked-btn {
+  color: #c3ced7;
 }

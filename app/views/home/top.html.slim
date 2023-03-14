@@ -17,6 +17,13 @@ header
           .post-user-name
             = tweet.user.name
           = link_to  tweet.text, tweet_path(tweet)
+          .like
+            - if current_user.liked?(tweet)
+              = link_to tweet_like_path(tweet.id), {method:"delete"} do
+                span class="fa fa-heart liked-btn"
+            - else 
+              = link_to tweet_like_path(tweet.id), {method:"post"} do
+                span class="fa fa-heart unliked-btn"
 
   -if current_user
     .tweet-menu
