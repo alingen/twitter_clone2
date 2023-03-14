@@ -1,12 +1,5 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action :ensure_correct_user, only: %i[update]
-
-  def ensure_correct_user
-    if current_user.id != params[:id].to_i
-      redirect_to root_path
-    end
-  end
 
   def withdrawal
     if current_user.update(is_deleted: true)
@@ -23,9 +16,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update user_params
-      redirect_to @user
+    if current_user.update user_params
+      redirect_to current_user
     else
       render :show
     end
